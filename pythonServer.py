@@ -113,7 +113,7 @@ def main():
 
 
 
-    server = HTTPServer(('', PORT), YTScriptGrabbingService)
+    #server = HTTPServer(('', PORT), YTScriptGrabbingService)
     print('Server running on port %s.' % PORT)
     #server.socket = ssl.wrap_socket(server.socket,
     #keyfile="",
