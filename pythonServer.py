@@ -4,6 +4,7 @@ from http.server import HTTPServer, BaseHTTPRequestHandler
 from youtube_transcript_api import YouTubeTranscriptApi as YTTranscriptAPI
 import urllib.parse as urlparse
 import json
+import sys
 import ssl
 
 
@@ -100,6 +101,8 @@ class YTScriptGrabbingService(BaseHTTPRequestHandler):
         return
 
 def main():
+    print(sys.argv)
+
     PORT = 9988
     server = HTTPServer(('', PORT), YTScriptGrabbingService)
     print('Server running on port %s.' % PORT)
