@@ -102,8 +102,12 @@ class YTScriptGrabbingService(BaseHTTPRequestHandler):
 
 def main():
     print(sys.argv)
-
     PORT = 9988
+    if len(sys.argv) > 1:
+        PORT = int(sys.argv[1])
+
+
+
     server = HTTPServer(('', PORT), YTScriptGrabbingService)
     print('Server running on port %s.' % PORT)
     #server.socket = ssl.wrap_socket(server.socket,
