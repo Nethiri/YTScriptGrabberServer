@@ -101,10 +101,15 @@ class YTScriptGrabbingService(BaseHTTPRequestHandler):
         return
 
 def main():
-    print(sys.argv)
     PORT = 9988
+    HOST = "" #"localhost"
+
     if len(sys.argv) > 1:
         PORT = int(sys.argv[1])
+    if len(sys.argv) > 2:
+        HOST = sys.argv[2]
+
+    server = HTTPServer((HOST, PORT), YTScriptGrabbingService)
 
 
 
