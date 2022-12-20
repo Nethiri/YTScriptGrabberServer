@@ -1,21 +1,10 @@
 FROM python:3.8
 
-ENV SRC_DIR /usr/bin/src/webapp/src
+WORKDIR /code
 
-COPY src/* ${SRC_DIR}/
+COPY ./requirements.txt /code/requirements.txt
+COPY ./main.py /code/main.py
 
-WORKDIR ${SRC_DIR}
+RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 
-ENV PYTHONUNBUFFERED=1
-
-RUN pip install youtube_transcript_api
-
-CMD ["python", "main.py"]
-
-
-
-
-#ADD main.py .
-
-#CMD ["python", "./main.py"]
-
+CMD ["python", "main.py", "9988", "0.0.0.0"]
