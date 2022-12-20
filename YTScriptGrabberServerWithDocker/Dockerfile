@@ -10,3 +10,4 @@ RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 CMD ["python", "main.py", "9988", "0.0.0.0"]
 
 #docker run -p 9988:9988 -e PYTHONUNBUFFERED=1 yt_script_grabber_docker_server
+#docker build -t yt_script_grabber_docker_server .
